@@ -1,6 +1,4 @@
-from BFS_graph_search import BFSgraphSearch
-from BFS_hybrid_search import BFShybridSearch
-from BFS_tree_search import BFStreeSearch
+from IDS import BFSgraphSearch
 import os
 import platform
 import time
