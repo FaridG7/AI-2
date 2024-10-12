@@ -1,6 +1,5 @@
 import math
 from typing import  Optional
-from Node import Node
 
 
 
@@ -23,6 +22,8 @@ def IDS(goal:int) -> str:
 
     while True:
         result = LDS(goal, L)
-        if result: return result + f"(Steps={result.count("=>")})"
+        if result: 
+            steps = result.count("=>")
+            return result + f"({steps} steps)"
         L += 1
 

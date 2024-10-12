@@ -1,4 +1,4 @@
-from IDS import BFSgraphSearch
+from IDS import IDS
 import os
 import platform
 import time
@@ -40,12 +40,6 @@ def main():
     global stop_loading  # Used for controlling the loading indicator
     error_message = ""  # To store error messages
 
-    algorithms = {
-        '1': BFStreeSearch,
-        '2': BFSgraphSearch,
-        '3': BFShybridSearch
-    }
-
     while True:
         clear_console()  # Clear the console
 
@@ -53,20 +47,6 @@ def main():
         if error_message:
             print(error_message)
             error_message = ""  # Reset the error message after displaying
-
-        # Display options to the user
-        print("Select an algorithm:")
-        print("1. BFStreeSearch")
-        print("2. BFSgraphSearch")
-        print("3. BFShybridSearch")
-
-        # Take user input for algorithm selection
-        choice = input("Enter the number of your choice (1-3): ")
-
-        # Validate user choice
-        if choice not in algorithms:
-            error_message = "Invalid choice! Please select a number between 1 and 3."
-            continue  # Retry the selection
 
         # Take user input for goal
         goal = input("Enter the goal (an integer): ")
@@ -78,7 +58,7 @@ def main():
             continue  # Retry the goal input
 
         # Run the selected algorithm with loading indicator
-        run_algorithm(algorithms[choice], goal)
+        run_algorithm(IDS, goal)
 
         # Ask if the user wants to run another test
         another = input("Do you want to run another test? (y/N): ").strip().lower()
